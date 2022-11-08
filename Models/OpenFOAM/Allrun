@@ -1,0 +1,34 @@
+#!/bin/sh
+
+unzip ./Mesh_Files/meshes.zip
+
+mkdir Case32
+mkdir Case64
+
+cp -R Case Case32
+cp -R Case Case64
+mv Case Case16
+
+mv pipe16.msh Case16
+mv pipe32.msh Case32
+mv pipe64.msh Case64
+
+cd Case16
+fluentMeshToFoam pipe16.msh
+blockMesh > blockMesh.log
+icoFoam > run.log 2>&1
+postProcess -func sample
+cd ..
+
+cd Case32
+fluentMeshToFoam pipe32.msh
+blockMesh > blockMesh.log
+icoFoam > run.log 2>&1
+postProcess -func sample
+cd ..
+
+cd Case64
+fluentMeshToFoam pipe64.msh
+blockMesh > blockMesh.log
+icoFoam > run.log 2>&1
+postProcess -func sample

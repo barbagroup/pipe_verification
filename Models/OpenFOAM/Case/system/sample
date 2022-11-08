@@ -82,34 +82,6 @@ sets
         start           (0 -0.00227 0.12);
         end             (0 0.00227 0.12);
     }       
-    at0.14
-    {
-        type            lineCell;//lineFace;
-        axis            y;
-        start           (0 -0.00227 0.14);
-        end             (0 0.00227 0.14);
-    }   
-    at0.16
-    {
-        type            lineCell;//lineFace;
-        axis            y;
-        start           (0 -0.00227 0.16);
-        end             (0 0.00227 0.16);
-    }        
-    at0.18
-    {
-        type            lineCell;//lineFace;
-        axis            y;
-        start           (0 -0.00227 0.18);
-        end             (0 0.00227 0.18);
-    }       
-    at0.2
-    {
-        type            lineCell;//lineFace;
-        axis            y;
-        start           (0 -0.00227 0.199);
-        end             (0 0.00227 0.199);
-    } 
 );
 
 fields
