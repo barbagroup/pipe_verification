@@ -1,6 +1,6 @@
 #!/bin/sh
 
-unzip ./Mesh_Files/meshes.zip
+tar -xvf ./Mesh_Files/meshes.tar.xz
 
 cp -r Case Case32
 cp -r Case Case64
