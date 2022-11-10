@@ -1,0 +1,93 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    location        "system";
+    object          sample;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+type sets;
+libs            ("libsampling.so");
+
+interpolationScheme cell;//cellPointFace--;
+// interpolationScheme. choice of
+//      cell          : use cell-centre value only; constant over cells (default)
+//      cellPoint     : use cell-centre and vertex values
+//      cellPointFace : use cell-centre, vertex and face values.
+// 1] vertex values determined from neighbouring cell-centre values
+// 2] face values determined using the current face interpolation scheme
+//    for the field (linear, gamma, etc.)
+interpolationScheme cell;
+
+
+setFormat csv;
+//      null        : suppress output
+//      foamFile    : separate points, faces and values file
+//      dx          : DX scalar or vector format
+//      vtk         : VTK ascii format
+//      raw         : x y z value format for use with e.g. gnuplot 'splot'.
+
+
+sets
+(
+    at0.02
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.02);
+        end             (0 0.00227 0.02);
+    }
+    at0.04
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.04);
+        end             (0 0.00227 0.04);
+    }
+    at0.06
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.06);
+        end             (0 0.00227 0.06);
+    }
+    at0.08
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.08);
+        end             (0 0.00227 0.08);
+    }
+    at0.1
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.1);
+        end             (0 0.00227 0.1);
+    }
+    at0.012
+    {
+        type            lineCell;//lineFace;
+        axis            y;
+        start           (0 -0.00227 0.12);
+        end             (0 0.00227 0.12);
+    }       
+);
+
+fields
+(
+    U
+);
+
+
+// ************************************************************************* //

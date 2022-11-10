@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.msh
+*.tar
+*.tar.gz
+*.tar.xz
